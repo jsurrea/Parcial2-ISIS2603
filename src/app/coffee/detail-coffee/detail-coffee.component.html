@@ -1,6 +1,8 @@
-<p>
-  detail-coffee works!
-</p>
-<p>
-  {{coffee.nombre}}
-</p>
+<div class="card">
+  <img [src]="coffee.imagen" class="card-img-top" [alt]="coffee.nombre">
+  <div class="card-body">
+    <h5 class="card-title">{{coffee.nombre}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{coffee.sabor}}</h6>
+    <p class="card-text">Cultivado a una altura de {{coffee.altura}} msnm</p>
+  </div>
+</div>

@@ -1,26 +1,28 @@
-<div class="col-9">
-  <table class="table">
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Región</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let coffee of coffees">
-        <th scope="row">{{coffee.id}}</th>
-        <td>{{coffee.nombre}}</td>
-        <td>{{coffee.tipo}}</td>
-        <td>{{coffee.region}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>Total café de origen: {{totalOrigen}}</p>
-  <p>Total café blend: {{totalBlend}}</p>
-</div>
+<div class="row">
+  <div class="col-8 offset-1">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Región</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coffee of coffees" (click)="onSelected(coffee)">
+          <th scope="row">{{coffee.id}}</th>
+          <td>{{coffee.nombre}}</td>
+          <td>{{coffee.tipo}}</td>
+          <td>{{coffee.region}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Total café de origen: {{totalOrigen}}</p>
+    <p>Total café blend: {{totalBlend}}</p>
+  </div>
 
-<div class="col-3" *ngIf="selected">
-    <app-detail-coffee [coffee]="selectedCoffee"></app-detail-coffee>
+  <div class="col-3" *ngIf="selected">
+      <app-detail-coffee [coffee]="selectedCoffee"></app-detail-coffee>
+  </div>
 </div>
